@@ -29,8 +29,12 @@
   },
 
   "custom/logo": {
+    {{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "arch")) }}
     "format": "󰣇",
-    "tooltip-format": "󰌽 Fastfetch",
+    {{ else }}
+    "format": "󰌽",
+    {{ end }}
+    "tooltip-format": " Fastfetch",
     "on-click": "foot --app-id floating-terminal --hold fastfetch"
   },
 
@@ -139,9 +143,22 @@
       "transition-duration": 500,
       "transition-left-to-right": false
     },
-    "modules": ["battery", "cpu", "memory", "power-profiles-daemon"]
+    {{ if eq .hosttype "laptop" }}
+    "modules": [
+        "battery", 
+        "cpu", 
+        "memory", 
+        "power-profiles-daemon"
+    ]
+    {{ else }}
+    "modules": [
+        "cpu", 
+        "memory" 
+    ]
+    {{ end }}
   },
 
+  {{ if eq .hosttype "laptop" }}
   "battery": {
     "states": {
       "warning": 30,
@@ -166,6 +183,7 @@
       "power-saver": ""
     }
   },
+  {{ end }}
   "cpu": {
     "format": " {usage}%",
     "tooltip": false,

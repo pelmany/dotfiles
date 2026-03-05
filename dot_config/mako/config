@@ -5,7 +5,6 @@ anchor=top-right
 
 sort=-time
 max-history=5
-max-visible=4
 
 font=JetBrainsMono Nerd Font Mono 12
 
@@ -15,6 +14,10 @@ padding=4
 border-size=2
 border-radius=10
 max-icon-size=64
+icon-border-radius=10
+
+default-timeout=5000
+max-visible=5
 
 [mode=dnd]
 invisible=1

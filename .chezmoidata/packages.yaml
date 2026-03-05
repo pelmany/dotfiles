@@ -2,107 +2,135 @@ packages:
   linux:
     arch:
       pacman:
-        # wayland
-        - 'wayland'
-        - 'xorg-xwayland'
-        - 'xwayland-satellite'
-        - 'qt6-wayland'
+        desktop:
+          # wayland
+          - 'wayland'
+          - 'wl-mirror'
+          - 'xorg-xwayland'
+          - 'xwayland-satellite'
+          - 'qt6-wayland'
 
-        # shell
-        - 'zsh'
-        - 'zsh-autosuggestions'
-        - 'zsh-syntax-highlighting'
+          # shell
+          - 'zsh'
+          - 'zsh-autosuggestions'
+          - 'zsh-syntax-highlighting'
 
-        # sys
-        - 'bluez'
-        - 'wireplumber'
-        - 'power-profiles-daemon'
-        - 'brightnessctl'
-        - 'wl-clipboard'
-        - 'cliphist'
+          # sys
+          - 'bluez'
+          - 'wireplumber'
+          - 'brightnessctl'
+          - 'wl-clipboard'
+          - 'cliphist'
 
-        # instruments
-        - 'gcc'
-        - 'gdb'
-        - 'clang'
-        - 'rust'
-        - 'python'
-        - 'python-pip'
+          # instruments
+          - 'gcc'
+          - 'gdb'
+          - 'clang'
+          - 'rust'
+          - 'python'
+          - 'python-pip'
 
-        # virtualization
-        - 'libvirt'
-        - 'qemu-desktop'
-        - 'virt-manager'
+          # virtualization
+          - 'libvirt'
+          - 'qemu-desktop'
+          - 'virt-manager'
 
-        # printing
-        - 'cups'
-        - 'gutenprint'
-        - 'system-config-printer'
+          # printing
+          - 'cups'
+          - 'gutenprint'
+          - 'system-config-printer'
 
-        # cli utilities
-        - 'calcurse'
-        - 'yazi'
-        - 'jq'
-        - 'poppler'
-        - 'fd'
-        - 'ripgrep'
-        - 'fzf'
-        - 'zoxide'
-        - 'resvg'
-        - 'imagemagick'
-        - 'openssh'
-        - 'inetutils'
-        - 'gopass'
-        - '7zip'
-        - 'neovim'
-        - 'starship'
-        - 'tmux'
-        - 'git'
-        - 'htop'
-        - 'wiremix'
-        - 'ffmpeg'
-        - 'bluetui'
-        - 'gvfs'
-        - 'gvfs-smb'
-        - 'gvfs-smb'
+          # cli utilities
+          # base
+          - 'tmux'
+          - 'git'
+          # dm
+          - 'ly'
+          # security
+          - 'openssl'
+          - 'gopass'
+          # shell prompt
+          - 'starship'
+          # screenrec
+          - 'wf-recorder'
+          # calendar
+          - 'calcurse'
+          # file managment
+          - 'yt-dlp'
+          - 'neovim'
+          - '7zip'
+          - 'yazi'
+          - 'jq'
+          - 'fd'
+          - 'ripgrep'
+          - 'fzf'
+          - 'gvfs'
+          - 'gvfs-smb'
+          - 'gvfs-smb'
+          - 'zoxide'
+          # media
+          - 'imagemagick'
+          - 'resvg'
+          - 'poppler'
+          - 'ffmpeg'
+          # ssh telnet
+          - 'openssh'
+          - 'inetutils'
+          # TUI
+          - 'htop'
+          - 'wiremix'
+          - 'bluetui'
+          # music
+          - 'mpd'
+          - 'cava'
+          - 'rmpc'
+          # styling
+          - 'matugen'
+          - 'qt6ct'
 
-        # gui utilities
-        - 'thunar'
-        - 'thunar-archive-plugin'
-        - 'thunar-media-tags-plugin'
-        - 'thunar-volman'
-        - 'tumbler'
-        - 'ffmpegthumbnailer'
-        - 'file-roller'
-        - 'qalculate-gtk'
-        - 'ristretto'
-        - 'mpv'
-        - 'foot'
-        - 'foot-terminfo'
-        - 'fuzzel'
-        - 'firefox'
-        - 'zathura'
-        - 'zathura-djvu'
-        - 'zathura-pdf-poppler'
+          # gui utilities
+          # browser
+          - 'firefox'
+          # term
+          - 'foot'
+          - 'foot-terminfo'
+          # launcher
+          - 'fuzzel'
+          # file managment
+          - 'thunar'
+          - 'thunar-archive-plugin'
+          - 'thunar-media-tags-plugin'
+          - 'thunar-volman'
+          - 'tumbler'
+          - 'ffmpegthumbnailer'
+          - 'file-roller'
+          # media viewers
+          - 'mpv'
+          - 'ristretto'
+          - 'zathura'
+          - 'zathura-djvu'
+          - 'zathura-pdf-poppler'
+          # calculator
+          - 'qalculate-gtk'
 
-        # dm
-        - 'ly'
+          # graphic output
+          - 'niri'
+          - 'gamescope'
+          - 'waybar'
+          - 'mako'
+          - 'swww'
+          - 'polkit-kde-agent'
+          - 'swayidle'
+          - 'gtklock'
+          - 'xdg-utils'
+          - 'xdg-desktop-portal-gtk'
+          - 'xdg-desktop-portal-gnome'
 
-        # niri env
-        - 'niri'
-        - 'gamescope'
-        - 'waybar'
-        - 'mako'
-        - 'swww'
-        - 'polkit-kde-agent'
-        - 'swayidle'
-        - 'gtklock'
-        - 'xdg-utils'
-        - 'xdg-desktop-portal-gtk'
-        - 'xdg-desktop-portal-gnome'
+          # system theme
+          - 'ttf-jetbrains-mono-nerd'
+          - 'breeze'
+          - 'breeze-icons'
 
-        # styling
-        - 'ttf-jetbrains-mono-nerd'
-        - 'breeze'
-        - 'matugen'
-        - 'qt6ct'
+        laptop:
+          # powermanagment
+          - 'power-profiles-daemon'

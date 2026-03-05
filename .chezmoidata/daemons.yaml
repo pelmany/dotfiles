@@ -1,8 +1,11 @@
 daemons:
   linux:
     arch:
-      - 'libvirtd.socket'
-      - 'power-profiles-daemon'
-      - 'cups.socket'
-      - 'ly@tty2'
-      - 'bluetooth'
+      default:
+        - 'ly@tty2'
+        - 'bluetooth'
+        - 'libvirtd.socket'
+        - 'cups.socket'
+        - 'power-profiles-daemon'
+      user:
+        - 'mpd.socket'

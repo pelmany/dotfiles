@@ -4,9 +4,10 @@ arguments = ["img", "--transition-type", "top"]
 set = true
 
 [config]
-[templates.color-scheme]
-input_path = 'templates/matugen.colors'
-output_path = '~/.local/share/color-schemes/.matugen.colors'
+[templates.cava]
+input_path = 'templates/cava-colors.ini'
+output_path = '~/.config/cava/themes/.matugen.cava'
+#post_hook = 'pkill -USR1 cava'
 
 [templates.foot]
 input_path = 'templates/foot-colors.ini'
@@ -47,6 +48,10 @@ post_hook = 'pkill -SIGUSR1 nvim'
 [templates.qt6ct]
 input_path = 'templates/qtct-colors.conf'
 output_path = '~/.config/qt6ct/colors/.matugen.conf'
+
+[templates.rmpc]
+input_path = 'templates/rmpc-colors.ron'
+output_path = '~/.config/rmpc/themes/.matugen.ron'
 
 [templates.tmux]
 input_path = 'templates/tmux-colors.conf'

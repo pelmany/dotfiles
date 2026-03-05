@@ -1,0 +1,20 @@
+[general]
+live-config = 1
+
+mode = normal
+
+framerate = 60
+sensitivity = 100
+
+[input]
+method = pulse
+source = auto
+; method = fifo
+; source = /tmp/mpd.fifo
+
+[output]
+method = noncurses
+orientation = bottom
+
+[color]
+theme = '.matugen.cava'

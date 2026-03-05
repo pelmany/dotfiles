@@ -2,4 +2,3 @@ groups:
   linux:
     arch:
       - 'libvirt'
-      - 'gamemode'
