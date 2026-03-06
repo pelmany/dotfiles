@@ -1,0 +1,135 @@
+arch-pkgs:
+  desktop:
+    # wayland
+    - 'wayland'
+    - 'wl-mirror'
+    - 'xorg-xwayland'
+    - 'xwayland-satellite'
+    - 'qt6-wayland'
+
+    # shell
+    - 'zsh'
+    - 'zsh-autosuggestions'
+    - 'zsh-syntax-highlighting'
+
+    # sys
+    - 'bluez'
+    - 'wireplumber'
+    - 'brightnessctl'
+    - 'wl-clipboard'
+    - 'cliphist'
+
+    # instruments
+    - 'gcc'
+    - 'gdb'
+    - 'clang'
+    - 'rust'
+    - 'python'
+    - 'python-pip'
+
+    # virtualization
+    - 'libvirt'
+    - 'qemu-desktop'
+    - 'virt-manager'
+
+    # printing
+    - 'cups'
+    - 'gutenprint'
+    - 'system-config-printer'
+
+    # cli utilities
+    # base
+    - 'tmux'
+    - 'git'
+    # dm
+    - 'ly'
+    # security
+    - 'openssl'
+    - 'gopass'
+    # shell prompt
+    - 'starship'
+    # screenrec
+    - 'wf-recorder'
+    # calendar
+    - 'calcurse'
+    # file managment
+    - 'yt-dlp'
+    - 'neovim'
+    - '7zip'
+    - 'yazi'
+    - 'jq'
+    - 'fd'
+    - 'ripgrep'
+    - 'fzf'
+    - 'gvfs'
+    - 'gvfs-smb'
+    - 'gvfs-smb'
+    - 'zoxide'
+    # media
+    - 'imagemagick'
+    - 'resvg'
+    - 'poppler'
+    - 'ffmpeg'
+    # ssh telnet
+    - 'openssh'
+    - 'inetutils'
+    # TUI
+    - 'htop'
+    - 'wiremix'
+    - 'bluetui'
+    # music
+    - 'mpd'
+    - 'cava'
+    - 'rmpc'
+    # styling
+    - 'matugen'
+    - 'qt6ct'
+
+    # gui utilities
+    # browser
+    - 'firefox'
+    # term
+    - 'foot'
+    - 'foot-terminfo'
+    # launcher
+    - 'fuzzel'
+    # file managment
+    - 'thunar'
+    - 'thunar-archive-plugin'
+    - 'thunar-media-tags-plugin'
+    - 'thunar-volman'
+    - 'tumbler'
+    - 'ffmpegthumbnailer'
+    - 'file-roller'
+    # media viewers
+    - 'mpv'
+    - 'mpv-mpris'
+    - 'imv'
+    - 'imv-dir'
+    - 'zathura'
+    - 'zathura-djvu'
+    - 'zathura-pdf-poppler'
+    # calculator
+    - 'qalculate-gtk'
+
+    # graphic output
+    - 'niri'
+    - 'gamescope'
+    - 'waybar'
+    - 'mako'
+    - 'swww'
+    - 'swayidle'
+    - 'gtklock'
+    - 'xdg-utils'
+    - 'xdg-desktop-portal-gtk'
+    - 'xdg-desktop-portal-gnome'
+    - 'polkit-kde-agent'
+
+    # system theming
+    - 'ttf-jetbrains-mono-nerd'
+    - 'breeze'
+    - 'breeze-icons'
+
+  laptop:
+    # powermanagment
+    - 'power-profiles-daemon'

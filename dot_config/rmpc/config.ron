@@ -4,7 +4,7 @@
 (
     password: None,
     theme: ".matugen",
-    cache_dir: None,
+    cache_dir: "cache",
     on_song_change: None,
     volume_step: 5,
     max_fps: 30,
@@ -179,11 +179,11 @@
                                     pane: Pane(AlbumArt)
                                 ),
                                 (
-                                    size: "7",
+                                    size: "10",
                                     borders: "ALL",
                                     border_symbols: Inherited(parent: Rounded, top_left: "├", top_right: "┤",),
                                     border_title: [(kind: Text(" Lyrics "))],
-                                    border_title_alignment: Right,
+                                    border_title_alignment: Left,
                                     pane: Pane(Lyrics)
                                 ),
                             ],
@@ -214,8 +214,7 @@
                                 ),
                                 (
                                     size: "100%",
-                                    borders: "LEFT | RIGHT | BOTTOM",
-                                    border_symbols: Rounded,
+                                    borders: "LEFT | RIGHT",
                                     pane: Split(
                                         direction: Horizontal,
                                         panes: [
@@ -224,15 +223,17 @@
                                                 pane: Pane(Empty())
                                             ),
                                             (
-                                                size: "50%",
+                                                size: "100%",
                                                 pane: Pane(Queue)
-                                            ),
-                                            (
-                                                size: "50%", 
-                                                pane: Pane(Cava)
                                             ),
                                         ]
                                     )
+                                ),
+                                (
+                                    size: "10",
+                                    borders: "ALL",
+                                    border_symbols: Inherited(parent: Rounded, top_left: "├", top_right: "┤",),
+                                    pane: Pane(Cava)
                                 ),
                             ],
                         )

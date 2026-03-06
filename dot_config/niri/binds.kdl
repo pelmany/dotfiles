@@ -3,7 +3,7 @@ binds {
 
     Mod+T hotkey-overlay-title="Open a terminal" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Lauch a program" { spawn "fuzzel"; }
-    Mod+V hotkey-overlay-title="View a clipboard history" { spawn "sh" "-c" "cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy"; }
+    Mod+V hotkey-overlay-title="View a clipboard history" { spawn-sh "cliphist list | fuzzel --dmenu --with-nth 2 --prompt=' ' --placeholder='cliphist' | cliphist decode | wl-copy"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "gtklock"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.0"; }

@@ -5,27 +5,15 @@
 sudo pacman -Syu
 
 {{ if (or (eq .hosttype "desktop") (eq .hosttype "laptop")) }}
-{{ range .packages.linux.arch.pacman.desktop }}
+{{ range .arch-pkgs.desktop }}
 sudo pacman -S --noconfirm --needed {{ . | quote }}
 {{ end }}
 {{ end }}
 
 {{ if eq .hosttype "laptop" }}
-{{ range .packages.linux.arch.pacman.laptop }}
+{{ range .arch-pkgs.laptop }}
 sudo pacman -S --noconfirm --needed {{ . | quote }}
 {{ end }}
-{{ end }}
-
-{{ range .daemons.linux.arch.default }}
-sudo systemctl enable {{ . }} --now
-{{ end }}
-
-{{ range .daemons.linux.arch.user }}
-sudo systemctl enable {{ . }} --now
-{{ end }}
-
-{{ range .groups.linux.arch }}
-sudo usermod -aG {{ . }} $USER
 {{ end }}
 
 {{ end }}
