@@ -1,8 +1,8 @@
 {{ if lookPath "matugen" }}
 source-file ~/.config/tmux/themes/.matugen.conf
 {{ else }}
-set -g @catppuccin_flavor 'mocha'
 run ~/.config/tmux/plugins/catppuccin/tmux/catppuccin.tmux
+set -g @catppuccin_flavor 'mocha'
 {{ end }}
 
 set -g default-terminal "tmux-256color"
