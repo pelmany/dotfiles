@@ -1,17 +1,17 @@
-@define-color foreground #cad3f5;
-@define-color subforeground0 #a5adcb;
-@define-color subforeground1 #b8c0e0;
-
 @define-color background #24273a;
-@define-color surface0 #494d64;
-@define-color surface1 #5b6078;
-@define-color outline #1e2030;
-@define-color shadow #181926;
+@define-color outline #6e738d;
 
-@define-color accent #8bd5ca;
-@define-color preaccent #91d7e3;
+@define-color surface #363a4f;
+@define-color on-surface #cad3f5;
 
-@define-color ready #a6da95;
-@define-color attention #eed49f;
-@define-color alert #ed8796;
+@define-color primary #8bd5ca;
+@define-color on-primary #494d64;
 
+@define-color secondary #b7bdf8;
+@define-color on-secondary #494d64;
+
+@define-color tetriary #eed49f;
+@define-color on-tetriary #494d64;
+
+@define-color error #ed8796;
+@define-color on-error #494d64;

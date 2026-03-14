@@ -11,14 +11,14 @@
 window#waybar {
     background-color: @background;
     border-bottom: 2px solid @outline;
-    color: @on_surface;
+    color: @on-surface;
     transition-property: background-color;
     transition-duration: .5s;
 }
 
 tooltip {
     background-color: @background;
-    color: @on_surface;
+    color: @on-surface;
     border: 2px solid @outline;
     margin: 5px;
     padding: 2px 2px;
@@ -26,52 +26,52 @@ tooltip {
 
 #hardware,
 #sys {
-    background-color: @accent;
-    color: @surface0;
+    background-color: @primary;
+    color: @on-primary;
     border-radius: 10px;
     padding: 0 1px;
     margin: 5px 2px;
 }
 #hardware:hover,
 #sys:hover {
-    background-color: @preaccent;
-    color: @surface0;
+    background-color: @on-primary;
+    color: @primary;
 }
 
 #workspaces {
-    background-color: @surface0;
+    background-color: @surface;
     border-radius: 10px;
     padding: 0 8px;
     margin: 5px 2px;
 }
 
 #workspaces button {
-    color: @foreground;
+    color: @on-surface;
     padding: 0 2px; 
     margin: 5px 4px;    
 }
 
 #workspaces button:hover {
-    color: @surface0;
+    color: @surface;
     border-radius: 100px;
 }
 
 #workspaces button.focused {
-    background-color: @accent;
-    color: @surface0;
+    background-color: @primary;
+    color: @on-primary;
     padding: 0 2px; 
     margin: 5px 4px;    
     border-radius: 100px;
 }
 
 #workspaces button.focused:hover {
-    background-color: @preaccent;
-    color: @surface1;
+    background-color: @on-primary;
+    color: @primary;
 }
 
 #clock {
-    background-color: @accent;
-    color: @surface0;
+    background-color: @primary;
+    color: @on-primary;
     border-radius: 10px;
     padding: 0 8px;
     margin: 5px 2px;
@@ -79,8 +79,8 @@ tooltip {
 }
 
 #clock:hover {
-    background-color: @preaccent;
-    color: @surface1;
+    background-color: @surface;
+    color: @primary;
 }
 
 #tray,
@@ -89,17 +89,25 @@ tooltip {
 #network,
 #wireplumber,
 #backlight {
-    background-color: @surface0;
-    color: @foreground;
+    background-color: @surface;
+    color: @on-surface;
     border-radius: 10px;
     padding: 0 8px;
     margin: 5px 2px;
     min-width: 15px;
 }
 
+#network.disabled,
+#network.disconnected, 
+#bluetooth.disabled,
+#bluetooth.off,
+#wireplumber.muted {
+    color: @secondary
+}
+
 #tray menu {
-    background-color: @background;
-    color: @foreground;
+    background-color: @surface;
+    color: @on-surface;
     border: 2px solid @outline;
     border-radius: 0px;
 }
@@ -109,8 +117,8 @@ tooltip {
 #network:hover,
 #wireplumber:hover,
 #backlight:hover {
-    background-color: @surface1;
-    color: @foreground;
+    background-color: @on-surface;
+    color: @surface;
 }
 
 #custom-logo,
@@ -125,13 +133,13 @@ tooltip {
 
 #custom-shutdown:hover,
 #custom-reboot:hover {
-    color: @alert;
+    color: @error;
 }
 
 #battery.warning {
-    color: @attention;
+    color: @tetriary;
 }
 #battery.critical {
-    color: @alert;
+    color: @error;
 }
 

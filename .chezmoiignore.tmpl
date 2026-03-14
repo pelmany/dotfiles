@@ -1,7 +1,6 @@
 README.md
 .config/*
-.local/state/*
-.local/share/*
+.local/*
 
 !.config/nvim
 !.config/starship
@@ -30,11 +29,6 @@ README.md
 
 {{ if lookPath "mako" }}
 !.config/mako
-{{ end }}
-
-{{ if lookPath "mc" }}
-!.config/mc
-!.local/share/mc
 {{ end }}
 
 {{ if lookPath "mpd" }}

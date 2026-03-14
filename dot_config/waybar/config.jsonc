@@ -5,7 +5,7 @@
   "height": 35,
   // "width": 1280,
   "spacing": 0,
-  "reload_style_on_change": true,
+  // "reload_style_on_change": true,
 
   "modules-left": ["group/sys", "niri/workspaces"],
   "modules-center": ["clock"],
@@ -117,7 +117,7 @@
     "tooltip-format": "󱇢 {essid}, 󰢾 {signalStrength}%",
     "tooltip-format-disconnected": "󰌙 No connection",
     "tooltip-format-disabled": "󰌙 Interface is disabled",
-    "on-click": "foot --app-id floating-terminal nmtui"
+    "on-click": "foot --app-id floating-terminal impala"
   },
 
   "wireplumber": {

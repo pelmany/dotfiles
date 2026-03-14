@@ -49,8 +49,9 @@
 # screenrec
 - 'wf-recorder'
 # calendar
-- 'calcurse'
+- 'khal'
 # file managment
+- 'broot'
 - 'yt-dlp'
 - 'neovim'
 - '7zip'
@@ -61,8 +62,8 @@
 - 'fzf'
 - 'gvfs'
 - 'gvfs-smb'
-- 'gvfs-smb'
 - 'zoxide'
+- 'udiskie'
 # media
 - 'imagemagick'
 - 'resvg'
@@ -75,6 +76,7 @@
 - 'htop'
 - 'wiremix'
 - 'bluetui'
+- 'impala'
 # music
 - 'mpd'
 - 'cava'

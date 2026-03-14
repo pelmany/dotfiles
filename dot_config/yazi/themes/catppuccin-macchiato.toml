@@ -19,7 +19,7 @@ count_selected = { fg = "#24273a", bg = "#eed49f" }
 border_symbol = "│"
 border_style  = { fg = "#8087a2" }
 
-syntect_theme = "syntects/catppuccin-macchiato.tmTheme"
+syntect_theme = "../syntects/catppuccin-macchiato.tmTheme"
 
 [tabs]
 active   = { fg = "#24273a", bg = "#cad3f5", bold = true }

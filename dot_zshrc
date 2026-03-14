@@ -9,16 +9,12 @@ autoload -Uz compinit && compinit
 setopt autocd
 bindkey -e
 
-# ALIASES & FUNCTIONS
+# aliases & functions
 alias diff="diff --color=auto"
 alias grep="grep --color=auto"
 alias ll="ls -la --color=auto --human-readable"
 alias nv="nvim"
-{{ if lookPath "mc" }}
-alias mc=". /usr/lib/mc/mc-wrapper.sh"
-{{ end }}
 
-{{ if eq .chezmoi.osRelease.id "arch" }}
 function pamac() {
   if (( $+commands[paru] )); then
     paru -Syu
@@ -29,9 +25,7 @@ function pamac() {
     flatpak update
   fi
 }
-{{ end }}
 
-{{ if lookPath "yazi" }}
 function yz() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	command yazi "$@" --cwd-file="$tmp"
@@ -39,10 +33,10 @@ function yz() {
 	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
-{{ end }}
 
-# AUTORUN
-source ~/.config/zsh/zsh-syntax-highlighting.zsh 
-source ~/.config/zsh/zsh-autosuggestions.zsh 
-source ~/.config/zsh/fzf.zsh 
-source ~/.config/zsh/starship.zsh 
+# autorun
+eval "$(starship init zsh)"
+eval "$(fzf --zsh)"
+source /home/nikit/.config/broot/launcher/bash/br
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
