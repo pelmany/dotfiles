@@ -30,7 +30,7 @@
   },
 
   "custom/logo": {
-    "format": "󰣇",
+    "format": "",
     "tooltip-format": " Fastfetch",
     "on-click": "foot --app-id floating-terminal --hold fastfetch"
   },
@@ -181,7 +181,7 @@
     "format": " {}%",
     "tooltip": false,
     "on-click": "foot --app-id floating-terminal htop"
-  }
+  },
 
   "custom/swaync": {
     "tooltip": true,

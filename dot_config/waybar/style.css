@@ -24,15 +24,16 @@ tooltip {
     padding: 2px 2px;
 }
 
-#hardware,
+#sys,
 #custom-swaync {
     background-color: @primary;
     color: @on-primary;
     border-radius: 10px;
-    padding: 0 1px;
+    padding: 0 8px;
     margin: 5px 2px;
+    min-width: 15px;
 }
-#hardware:hover,
+#sys:hover,
 #custom-swaync:hover {
     background-color: @on-primary;
     color: @primary;
@@ -89,7 +90,7 @@ tooltip {
 #network,
 #wireplumber,
 #backlight, 
-#sys {
+#hardware {
     background-color: @surface;
     color: @on-surface;
     border-radius: 10px;
@@ -118,15 +119,15 @@ tooltip {
 #network:hover,
 #wireplumber:hover,
 #backlight:hover, 
-#sys:hover {
+#hardware:hover {
     background-color: @on-surface;
     color: @surface;
 }
 
-#custom-logo,
+/*#custom-logo,*/
 #custom-shutdown,
 #custom-reboot,
-#battery,
+/*#battery,*/
 #cpu,
 #memory,
 #power-profiles-daemon {

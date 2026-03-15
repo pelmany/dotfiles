@@ -182,10 +182,14 @@ truncation_symbol = "…/"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
+"Документы" = "󰈙 "
 "Downloads" = " "
+"Загрузки" = " "
 "Music" = " "
+"Музыка" = " "
 "Pictures" = " "
-"dev" = "󰲋 "
+"Изображения" = " "
+"Dev" = "󰲋 "
 
 [git_branch]
 symbol = ""
