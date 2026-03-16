@@ -138,7 +138,7 @@
     "tooltip-format-connected": "󰂱 {controller_alias},\t{controller_address}\n󰾰 {device_enumerate}",
     "tooltip-format-enumerate-connected": "󰂱 {device_alias}, {device_address}",
     "tooltip-format-enumerate-connected-battery": "󰂱 {device_alias},\t{device_address}\n󰥉 {device_battery_percentage}%",
-    "on-click": "foot --app-id floating-terminal main.pad=0x0 bluetui"
+    "on-click": "foot --app-id floating-terminal -o main.pad=0x0 bluetui"
   },
 
   "network": {
@@ -160,7 +160,7 @@
     "format-icons": ["", "", ""],
     "tooltip-format": "󱄠 {node_name}",
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-    "on-click": "foot --app-id floating-terminal main.pad=0x0 wiremix"
+    "on-click": "foot --app-id floating-terminal -o main.pad=0x0 wiremix"
   },
   "backlight": {
     "format": "{icon} {percent}%",
