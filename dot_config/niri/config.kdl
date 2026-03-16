@@ -6,7 +6,7 @@ include "animations.kdl"
 include "recent-windows.kdl"
 include "rules.kdl"
 include "binds.kdl"
-include "colors/catppuccin-macchiato-teal.kdl"
+include "colors/gruvbox-dark.kdl"
 
 spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"

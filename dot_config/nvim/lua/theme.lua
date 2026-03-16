@@ -1,4 +1,4 @@
-local scheme = "catppuccin-macchiato"
+local scheme = "gruvbox"
 
 if scheme ~= "" then
     vim.cmd("colorscheme " .. scheme)

@@ -1,6 +1,5 @@
 README.md
 .config/*
-.local/share/*
 .local/state/*
 
 !.config/nvim
@@ -9,11 +8,6 @@ README.md
 
 {{ if lookPath "aerc" }}
 !.config/aerc
-{{ end }}
-
-{{ if lookPath "broot" }}
-!.config/broot
-!.local/share/broot
 {{ end }}
 
 {{ if lookPath "cava" }}

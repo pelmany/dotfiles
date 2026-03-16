@@ -7,7 +7,11 @@
   "spacing": 0,
   // "reload_style_on_change": true,
 
-  "modules-left": ["group/sys", "niri/workspaces"],
+  "modules-left": [
+    "group/sys", 
+    "niri/workspaces"
+    // "mpris" 
+  ],
   "modules-center": ["clock"],
   "modules-right": [
     "tray",
@@ -61,9 +65,38 @@
     }
   },
 
+  "mpris": {
+	"format": "<b>{player_icon} {dynamic}</b>",
+	"format-paused": "<b>{status_icon} <i>{dynamic}</i></b>",
+    "dynamic-len": 60,
+    "dynamic-order": [
+      "title",
+      "artist",
+      "position",
+      "length"
+
+    ],
+    "dynamic-importance-order": [
+      "title",
+      "position",
+      "length",
+      "artist"
+    ],
+	"player-icons": {
+		"default": "",
+		"mpv": ""
+	},
+	"status-icons": {
+		"playing": "",
+		"paused": "",
+		"stopped": ""
+    },
+    "tooltip-format": "{status_icon} {player} {status}"
+  },
+
   "clock": {
     "interval": 1,
-    "format": " {:%H:%M:%S}",
+    "format": " <b>{:%H:%M:%S}</b>",
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
         "mode": "month",
@@ -105,7 +138,7 @@
     "tooltip-format-connected": "󰂱 {controller_alias},\t{controller_address}\n󰾰 {device_enumerate}",
     "tooltip-format-enumerate-connected": "󰂱 {device_alias}, {device_address}",
     "tooltip-format-enumerate-connected-battery": "󰂱 {device_alias},\t{device_address}\n󰥉 {device_battery_percentage}%",
-    "on-click": "foot --app-id floating-terminal bluetui"
+    "on-click": "foot --app-id floating-terminal main.pad=0x0 bluetui"
   },
 
   "network": {
@@ -118,7 +151,7 @@
     "tooltip-format": "󱇢 {essid}, 󰢾 {signalStrength}%",
     "tooltip-format-disconnected": "󰌙 No connection",
     "tooltip-format-disabled": "󰌙 Interface is disabled",
-    "on-click": "foot --app-id floating-terminal impala"
+    "on-click": "foot --app-id floating-terminal -o main.pad=0x0 nmtui"
   },
 
   "wireplumber": {
@@ -127,7 +160,7 @@
     "format-icons": ["", "", ""],
     "tooltip-format": "󱄠 {node_name}",
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-    "on-click": "foot --app-id floating-terminal wiremix"
+    "on-click": "foot --app-id floating-terminal main.pad=0x0 wiremix"
   },
   "backlight": {
     "format": "{icon} {percent}%",

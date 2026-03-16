@@ -20,7 +20,6 @@ export MANPAGER='nvim +Man!'
 # cli utilities' variables
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
-export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main cursor)
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=15
 
