@@ -1,3 +1,5 @@
 require("options")
+require("netrw")
 require("keymap")
-require("theme")
+require("colorscheme")
+require("lsp")
