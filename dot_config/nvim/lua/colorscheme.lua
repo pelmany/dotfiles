@@ -1,7 +1,5 @@
 vim.pack.add({
     { src = "https://github.com/ellisonleao/gruvbox.nvim" },
-    { src = "https://github.com/catppuccin/nvim" },
-    { src = "https://github.com/rebelot/kanagawa.nvim" },
 })
 
 require("gruvbox").setup({
@@ -12,10 +10,11 @@ require("gruvbox").setup({
         operators = false,
         folds = true,
     },
-    transparent_mode = true,
+    transparent_mode = false,
+    overrides = {
+        SignColumn = { bg = "NONE" }
+    },
 })
--- require("catppuccin").setup()
--- require("kanagawa").setup()
 
 local scheme = "gruvbox"
 vim.cmd("colorscheme " .. scheme)

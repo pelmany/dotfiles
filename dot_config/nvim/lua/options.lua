@@ -14,8 +14,10 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
 vim.opt.colorcolumn = ""
 
-vim.opt.list = false
-vim.opt.listchars = "tab:│ ,multispace:│   "
+vim.opt.list = true
+vim.opt.listchars = {
+    trail = '·',
+}
 
 vim.opt.expandtab = true
 vim.opt.smarttab = true
@@ -28,4 +30,3 @@ vim.opt.smartcase = true
 
 vim.opt.langmap =
 'ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz'
-
