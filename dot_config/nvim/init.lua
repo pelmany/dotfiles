@@ -1,5 +1,5 @@
+require("globals")
 require("options")
 require("autocmd")
 require("keymap")
-require("colorscheme")
 require("lsp")

@@ -1,24 +1,32 @@
 vim.g.mapleader = " "
 local set = vim.keymap.set
 
--- Vim pack mappings
-set('n', '<leader>!u', vim.pack.update, { desc = "NVIM pack update" })
+-- NVIM core mappings
+set("n", "<leader>!R", "<cmd>source<CR>", { desc = "NVIM config reload" })
+set("n", "<leader>!H", "<cmd>checkhealth<CR>", { desc = "NVIM check health" })
+set("n", "<leader>!U", vim.pack.update, { desc = "NVIM pack update" })
 
 -- LSP mappings
-set('n', "<leader>f", vim.lsp.buf.format, { desc = "LSP code formatter" })
-set('n', '<leader>r', vim.lsp.buf.rename, { desc = "LSP rename" })
-set('n', '<leader>gd', vim.lsp.buf.definition, { desc = "LSP go to Definition" })
-set('n', '<leader>gd', vim.lsp.buf.declaration, { desc = "LSP go to declaration" })
-set('n', '<leader>gd', vim.lsp.buf.implementation, { desc = "LSP go to implementation" })
-set('n', '<leader>K', vim.lsp.buf.hover, { desc = "Hover Docs" })
-set('n', '<leader>cc', vim.lsp.codelens.run, { desc = "LSP codelens" })
+set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Code Formatter (LSP)" })
+set("n", "<leader>lr", vim.lsp.buf.rename, { desc = "Rename (LSP)" })
+set("n", "<leader>K", vim.lsp.buf.hover, { desc = "Hover Docs (LSP)" })
+set("n", "<leader>lc", vim.lsp.codelens.run, { desc = "Codelens (LSP)" })
+set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition (LSP)" })
+set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration (LSP)" })
+set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to Implementation (LSP)" })
+
+-- Buffer mappings
+set("n", "<leader>q", "<cmd>confirm bd<CR>", { desc = "Close Buffer" })
 
 -- Tabs mappings
-set('n', "<leader>tt", ":tabnew<CR>", { desc = "Create new tab" })
-set('n', "<leader>tq", ":tabclose<CR>", { desc = "Close current tab" })
-set('n', "<leader>tQ", ":tabonly<CR>", { desc = "Leave only current tab" })
+set("n", "<leader>tt", "<cmd>tabnew<CR>", { desc = "Create new Tab" })
+set("n", "<leader>tq", "<cmd>tabclose<CR>", { desc = "Close current Tab" })
+set("n", "<leader>to", "<cmd>tabonly<CR>", { desc = "Leave only current Tab" })
 
 -- Split windows mappings
-set('n', "<leader>sv", ":vertical split<CR>", { desc = "Vertical split" })
-set('n', "<leader>sh", ":horizontal split<CR>", { desc = "Horizontal split" })
-set('n', "<leader>st", ":botright split | resize 10 | terminal<CR>", { desc = "Open splitted term" })
+set("n", "<leader>sv", "<cmd>vertical split<CR>", { desc = "Vertical Split" })
+set("n", "<leader>sh", "<cmd>horizontal split<CR>", { desc = "Horizontal Split" })
+set("n", "<leader>st", "<cmd>botright split | resize 10 | terminal<CR>", { desc = "Open Splitted Term" })
+
+-- Term mappings
+set("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit Term" })

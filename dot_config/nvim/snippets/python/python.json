@@ -1,7 +1,7 @@
 {
     "#!/usr/bin/env pythonX": {
         "prefix": "#env",
-        "body": "#!/usr/bin/env python$0",
+        "body": "#!/usr/bin/env python3",
         "description": "Shebang line for the first python in PATH"
     },
     "pyright ignore line": {

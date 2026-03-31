@@ -1,32 +1,43 @@
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+local opt = vim.opt
 
-vim.opt.mouse = "a"
-vim.opt.termguicolors = true
-vim.opt.clipboard = "unnamedplus"
+opt.mouse = "a"
+opt.termguicolors = true
+opt.clipboard = "unnamedplus"
 
-vim.opt.swapfile = false
-vim.opt.undofile = true
+opt.confirm = true
 
-vim.opt.number = true
-vim.opt.relativenumber = true
+opt.swapfile = false
+opt.undofile = true
 
-vim.opt.signcolumn = "yes"
-vim.opt.colorcolumn = ""
+opt.number = true
+opt.relativenumber = true
 
-vim.opt.list = true
-vim.opt.listchars = {
-    trail = '·',
+opt.signcolumn = "yes"
+opt.colorcolumn = ""
+
+opt.cursorline = true
+
+opt.list = true
+opt.listchars:append({
+  trail = "·",
+})
+
+opt.expandtab = true
+opt.smarttab = true
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
+
+opt.ignorecase = true
+opt.smartcase = true
+
+opt.completeopt = {
+  "fuzzy",
+  "nosort",
+  "menu",
+  "menuone",
+  "noselect",
 }
 
-vim.opt.expandtab = true
-vim.opt.smarttab = true
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-
-vim.opt.langmap =
-'ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz'
+opt.langmap =
+  "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"

@@ -37,8 +37,7 @@ local function oil_setup()
         },
     })
 
-    -- keymap
-    vim.keymap.set('n', "<leader>e", ":Oil<CR>", { desc = "Open Oil" })
+    vim.keymap.set('n', "<leader>e", "<cmd>Oil<CR>", { desc = "Open Oil" })
 end
 
 oil_setup()

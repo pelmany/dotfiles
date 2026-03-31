@@ -1,10 +1,10 @@
 return {
-  cmd = { 'rust-analyzer' },
+  cmd = { "rust-analyzer" },
   filetypes = { "rust" },
   root_markers = {
-    'Cargo.toml',
-    'rust-project.json',
-    '.git',
+    "Cargo.toml",
+    "rust-project.json",
+    ".git",
   },
   settings = {
     ["rust-analyzer"] = {

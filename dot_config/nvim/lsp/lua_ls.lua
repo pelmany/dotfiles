@@ -1,12 +1,12 @@
 return {
-  cmd = { 'lua-language-server' },
+  cmd = { "lua-language-server" },
   filetypes = { "lua" },
   root_markers = {
-    '.luarc.json',
-    '.luarc.jsonc',
-    '.stylua.toml',
-    'stylua.toml',
-    '.git',
+    ".luarc.json",
+    ".luarc.jsonc",
+    ".stylua.toml",
+    "stylua.toml",
+    ".git",
   },
   settings = {
     Lua = {
@@ -21,4 +21,3 @@ return {
     },
   },
 }
-
