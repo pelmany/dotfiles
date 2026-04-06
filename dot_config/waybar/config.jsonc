@@ -1,16 +1,16 @@
 // -*- mode: jsonc -*-
 {
   "layer": "top",
-  "position": "top", 
+  "position": "top",
   "height": 35,
   // "width": 1280,
   "spacing": 0,
   // "reload_style_on_change": true,
 
   "modules-left": [
-    "group/sys", 
-    "niri/workspaces"
-    // "mpris" 
+    "group/sys",
+    "niri/workspaces",
+    // "mpris"
   ],
   "modules-center": ["clock"],
   "modules-right": [
@@ -21,77 +21,66 @@
     "wireplumber",
     "backlight",
     "group/hardware",
-    "custom/swaync"
+    "custom/swaync",
   ],
 
   "group/sys": {
     "orientation": "horizontal",
     "drawer": {
       "transition-duration": 500,
-      "transition-left-to-right": true
+      "transition-left-to-right": true,
     },
-    "modules": ["custom/logo", "custom/shutdown", "custom/reboot"]
+    "modules": ["custom/logo", "custom/shutdown", "custom/reboot"],
   },
 
   "custom/logo": {
     "format": "",
     "tooltip-format": " Fastfetch",
-    "on-click": "foot --app-id floating-terminal --hold fastfetch"
+    "on-click": "foot --app-id floating-terminal --hold fastfetch",
   },
 
   "custom/shutdown": {
     "format": "󰐥",
     "tooltip-format": "󰐥 Shutdown",
-    "on-click": "shutdown now"
+    "on-click": "shutdown now",
   },
 
   "custom/reboot": {
     "format": "󰜉",
     "tooltip-format": "󰜉 Reboot",
-    "on-click": "reboot"
+    "on-click": "reboot",
   },
 
   "niri/workspaces": {
-   	"format": "{icon}",
+    "format": "{icon}",
     "format-icons": {
-        "web": "󰖟",
-        "cmd": "",
-        "work": "",
-        "message": "",
-        "media": "",
-        "document": "󰧮",
-        "game": "󰐼",
-        "secret": "󰌋"
-    }
+      "web": "󰖟",
+      "cmd": "",
+      "work": "",
+      "message": "",
+      "media": "",
+      "document": "󰧮",
+      "game": "󰐼",
+      "secret": "󰌋",
+    },
   },
 
   "mpris": {
-	"format": "<b>{player_icon} {dynamic}</b>",
-	"format-paused": "<b>{status_icon} <i>{dynamic}</i></b>",
+    "format": "<b>{player_icon} {dynamic}</b>",
+    "format-paused": "<b>{status_icon} <i>{dynamic}</i></b>",
     "dynamic-len": 60,
-    "dynamic-order": [
-      "title",
-      "artist",
-      "position",
-      "length"
-
-    ],
-    "dynamic-importance-order": [
-      "title",
-      "position",
-      "length",
-      "artist"
-    ],
-	"player-icons": {
-		"default": "",
-		"mpv": ""
-	},
-	"status-icons": {
-		"playing": "",
-		"paused": "",
-		"stopped": ""
+    "dynamic-order": ["title", "artist", "position", "length"],
+    "dynamic-importance-order": ["title", "position", "length", "artist"],
+    "player-icons": {
+      "default": "",
+      "mpv": "",
     },
-    "tooltip-format": "{status_icon} {player} {status}"
+    "status-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": "",
+    },
+    "tooltip-format": "{status_icon} {player} {status}",
   },
 
   "clock": {
@@ -99,32 +88,31 @@
     "format": " <b>{:%H:%M:%S}</b>",
     "tooltip-format": "<span>{calendar}</span>",
     "calendar": {
-        "mode": "month",
-        "format": {
-            "today": "<b><u>{}</u></b>"
-        },
-        "on-scroll": 1
+      "mode": "month",
+      "format": {
+        "today": "<b><u>{}</u></b>",
+      },
+      "on-scroll": 1,
     },
     "actions": {
-        "on-scroll-up": "shift_up",
-        "on-scroll-down": "shift_down"
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down",
     },
-    "on-click": "foot --app-id floating-terminal ikhal"
   },
 
   "tray": {
     "icons": {
       "blueman": "bluetooth",
-      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png",
     },
     "spacing": 8,
-    "reverse-direction": true
+    "reverse-direction": true,
   },
 
   "niri/language": {
     "format": " {}",
     "format-en": "en",
-    "format-ru": "ру"
+    "format-ru": "ру",
   },
 
   "bluetooth": {
@@ -136,7 +124,7 @@
     "tooltip-format-connected": "󰂱 {controller_alias}, {controller_address}\n󰾰 {device_enumerate}",
     "tooltip-format-enumerate-connected": "󰂱 {device_alias}, {device_address}",
     "tooltip-format-enumerate-connected-battery": "󰂱 {device_alias}, {device_address}\n󰥉 {device_battery_percentage}%",
-    "on-click": "foot --app-id floating-terminal -o main.pad=0x0 bluetui"
+    "on-click": "foot --app-id floating-terminal -o main.pad=0x0 bluetui",
   },
 
   "network": {
@@ -149,7 +137,7 @@
     "tooltip-format": "󱇢 {essid}, 󰢾 {signalStrength}%",
     "tooltip-format-disconnected": "󰌙 No connection",
     "tooltip-format-disabled": "󰌙 Interface is disabled",
-    "on-click": "foot --app-id floating-terminal -o main.pad=0x0 nmtui"
+    "on-click": "foot --app-id floating-terminal -o main.pad=0x0 nmtui",
   },
 
   "wireplumber": {
@@ -158,31 +146,26 @@
     "format-icons": ["", "", ""],
     "tooltip-format": "󱄠 {node_name}",
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-    "on-click": "foot --app-id floating-terminal -o main.pad=0x0 wiremix"
+    "on-click": "foot --app-id floating-terminal -o main.pad=0x0 wiremix",
   },
   "backlight": {
     "format": "{icon} {percent}%",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
   },
 
   "group/hardware": {
     "orientation": "horizontal",
     "drawer": {
       "transition-duration": 500,
-      "transition-left-to-right": false
+      "transition-left-to-right": false,
     },
-    "modules": [
-        "battery", 
-        "cpu", 
-        "memory", 
-        "power-profiles-daemon"
-    ]
+    "modules": ["battery", "cpu", "memory", "power-profiles-daemon"],
   },
 
   "battery": {
     "states": {
       "warning": 30,
-      "critical": 15
+      "critical": 15,
     },
     "format": "{icon} {capacity}%",
     "format-full": "{icon} {capacity}%",
@@ -190,7 +173,7 @@
     "format-plugged": "󰂄 {capacity}%",
     "format-alt": "{time} {icon}",
     "format-icons": ["󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
-    "tooltip-format": "{timeTo} 󰁹: {capacity}%"
+    "tooltip-format": "{timeTo} 󰁹: {capacity}%",
   },
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -200,18 +183,18 @@
       "default": "",
       "performance": "",
       "balanced": "",
-      "power-saver": ""
-    }
+      "power-saver": "",
+    },
   },
   "cpu": {
     "format": " {usage}%",
     "tooltip": false,
-    "on-click": "foot --app-id floating-terminal htop"
+    "on-click": "foot --app-id floating-terminal htop",
   },
   "memory": {
     "format": " {}%",
     "tooltip": false,
-    "on-click": "foot --app-id floating-terminal htop"
+    "on-click": "foot --app-id floating-terminal htop",
   },
 
   "custom/swaync": {
@@ -225,13 +208,13 @@
       "inhibited-notification": "󰂛",
       "inhibited-none": "󰪑",
       "dnd-inhibited-notification": "󰂛",
-      "dnd-inhibited-none": "󰪑"
+      "dnd-inhibited-none": "󰪑",
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
-    "escape": true
-  }
+    "escape": true,
+  },
 }
