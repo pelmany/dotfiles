@@ -45,5 +45,6 @@ opt.completeopt = {
 opt.pummaxwidth = 20
 opt.pumheight = 5
 
+opt.guifont = "JetBrainsMono Nerd Font:h12"
 opt.langmap =
 "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
