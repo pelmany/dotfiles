@@ -1,13 +1,31 @@
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/zcompcache"
-zstyle ':completion:*' completer _complete _ignored
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}'
-zstyle ':completion:*' use-compctl true
+zstyle ":completion:*" use-cache on
+zstyle ":completion:*" cache-path "$XDG_CACHE_HOME/zsh/zcompcache"
+zstyle ":completion:*" completer _complete _ignored
+zstyle ":completion:*" list-colors ""
+zstyle ":completion:*" matcher-list "" "m:{[:lower:]}={[:upper:]}"
+zstyle ":completion:*" use-compctl true
+
+zstyle ":vcs_info:*" enable git
+zstyle ":vcs_info:*" check-for-changes true
+zstyle ":vcs_info:*" get-revision true
 
 autoload -Uz compinit && compinit
+autoload -Uz vcs_info
 setopt autocd
+setopt prompt_subst
 bindkey -e
+
+# variables
+c_text="#fbf1c7"
+c_success="#98971a"
+c_error="#cc241d"
+c_usr="#d65d0e"
+c_dir="#d79921"
+c_vcs="#689d6a"
+
+f_icon="󰣇"
+f_lsep=""
+f_rsep=""
 
 # aliases & functions
 alias diff="diff --color=auto"
@@ -29,13 +47,31 @@ function pamac() {
 function yz() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
   command yazi "$@" --cwd-file="$tmp"
-  IFS= read -r -d '' cwd < "$tmp"
+  IFS= read -r -d "" cwd < "$tmp"
   [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
   rm -f -- "$tmp"
 }
 
+# prompt
+zstyle ":vcs_info:git:*" formats "  %b%u%c "
+zstyle ":vcs_info:git:*" actionformats "  %b|%a%u%c "
+zstyle ":vcs_info:git:*" unstagedstr "%F{$c_error}*%f"
+zstyle ":vcs_info:git:*" stagedstr "%F{$c_text}+%f"
+
+precmd() {
+  vcs_info
+
+  local P_USR="
+%F{$c_usr}${f_lsep}%K{$c_usr}%F{$c_text}${f_icon} %n %k%f"
+  local P_DIR="%F{$c_usr}%K{$c_dir}${f_rsep}%F{$c_text} %3~ %k%f"
+  local P_GIT="%F{$c_dir}%K{$c_vcs}${f_rsep}%F{$c_text}${vcs_info_msg_0_}%k%f"
+  local P_CHAR="%F{$c_vcs}${f_rsep}%k%f
+%(?.%F{$c_success}.%F{$c_error})❯%f "
+
+  PROMPT="${P_USR}${P_DIR}${P_GIT}${P_CHAR}"
+}
+
 # autorun
-eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
