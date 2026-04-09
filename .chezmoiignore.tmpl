@@ -2,7 +2,6 @@ README.md
 .config/*
 
 !.config/nvim
-!.config/starship
 !.config/tmux
 
 {{ if lookPath "aerc" }}
@@ -43,6 +42,10 @@ README.md
 
 {{ if lookPath "qt6ct" }}
 !.config/qt6ct
+{{ end }}
+
+{{ if lookPath "starship" }}
+!.config/starship
 {{ end }}
 
 {{ if lookPath "sway" }}
