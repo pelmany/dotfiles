@@ -2,7 +2,8 @@ local function dap_setup()
   vim.pack.add({
     { src = "https://codeberg.org/mfussenegger/nvim-dap" },
     { src = "https://codeberg.org/mfussenegger/nvim-dap-python" },
-    { src = "https://github.com/igorlfs/nvim-dap-view" },
+    { src = "https://github.com/nvim-neotest/nvim-nio" },
+    { src = "https://github.com/rcarriga/nvim-dap-ui" },
   })
 
   local dap = require("dap")
@@ -43,14 +44,14 @@ local function dap_setup()
   vim.fn.sign_define("DapStopped", { text = "≫", texthl = "DapStopped", linehl = "debugPC", numhl = "debugPC" })
 
 
-  local dap_view = require("dap-view")
-  dap_view.setup()
+  local dap_ui = require("dapui")
+  dap_ui.setup()
 
   vim.keymap.set('n', "<leader>br", dap.continue, { desc = "DAP run/continue" })
   vim.keymap.set('n', "<leader>bp", dap.pause, { desc = "DAP pause" })
   vim.keymap.set('n', "<leader>bq", dap.terminate, { desc = "DAP terminate" })
   vim.keymap.set('n', "<leader>bR", dap.repl.open, { desc = "DAP repl" })
-  vim.keymap.set('n', "<leader>bv", dap_view.toggle, { desc = "DAP View toggle" })
+  vim.keymap.set('n', "<leader>bv", dap_ui.toggle, { desc = "DAP UI toggle" })
   vim.keymap.set('n', "<leader>bb", dap.toggle_breakpoint, { desc = "Toggle breakpoint (DAP)" })
   vim.keymap.set('n', "<leader>bo", dap.step_over, { desc = "Step over (DAP)" })
   vim.keymap.set('n', "<leader>bi", dap.step_into, { desc = "Step into (DAP)" })

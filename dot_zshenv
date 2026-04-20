@@ -24,8 +24,8 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=15
 
 export FZF_DEFAULT_OPTS=" \
---color=bg+:#3c3836,bg:#282828,spinner:#8ec07c,hl:#d79921 \
---color=fg:#ebdbb2,header:#928374,info:#83a598,pointer:#8ec07c \
---color=marker:#fabd2f,fg+:#fbf1c7,prompt:#fe8019,hl+:#fabd2f \
---color=selected-bg:#504945 \
---color=border:#665c54,label:#ebdbb2"
+--color=bg+:#363A4F,bg:#24273A,spinner:#F4DBD6,hl:#ED8796 \
+--color=fg:#CAD3F5,header:#ED8796,info:#C6A0F6,pointer:#F4DBD6 \
+--color=marker:#B7BDF8,fg+:#CAD3F5,prompt:#C6A0F6,hl+:#ED8796 \
+--color=selected-bg:#494D64 \
+--color=border:#6E738D,label:#CAD3F5"

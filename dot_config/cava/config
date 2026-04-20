@@ -17,4 +17,4 @@ method = noncurses
 orientation = bottom
 
 [color]
-theme = 'gruvbox-dark.cava'
+theme = 'catppuccin-macchiato.cava'

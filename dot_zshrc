@@ -15,29 +15,26 @@ setopt autocd
 setopt prompt_subst
 bindkey -e
 
-# variables
-c_text="#fbf1c7"
-c_success="#98971a"
-c_error="#cc241d"
-c_usr="#d65d0e"
-c_dir="#d79921"
-c_vcs="#689d6a"
-
-f_icon="󰣇"
-f_lsep=""
-f_rsep=""
-
 # aliases & functions
 alias diff="diff --color=auto"
 alias grep="grep --color=auto"
 alias ll="ls -la --color=auto --human-readable"
 alias nv="nvim"
 
-function pamac() {
+function xupdate() {
   if (( $+commands[paru] )); then
     paru -Syu
   else
     sudo pacman -Syu
+  fi
+  if (( $+commands[apt] )); then
+    sudo apt update && apt upgrade
+  fi
+  if (( $+commands[dnf] )); then
+    sudo dnf upgrade --refresh
+  fi
+  if (( $+commands[xbps-install] )); then
+    sudo xbps-install -Syu
   fi
   if (( $+commands[flatpak] )); then
     flatpak update
@@ -53,6 +50,16 @@ function yz() {
 }
 
 # prompt
+c_text="#363a4f"
+c_success="#a6da95"
+c_error="#ed8796"
+c_usr="#f5a97f"
+c_dir="#eed49f"
+c_vcs="#8bd5ca"
+f_icon="󰣇"
+f_lsep=""
+f_rsep=""
+
 zstyle ":vcs_info:git:*" formats "  %b%u%c "
 zstyle ":vcs_info:git:*" actionformats "  %b|%a%u%c "
 zstyle ":vcs_info:git:*" unstagedstr "%F{$c_error}*%f"
@@ -61,17 +68,26 @@ zstyle ":vcs_info:git:*" stagedstr "%F{$c_text}+%f"
 precmd() {
   vcs_info
 
-  local P_USR="
+  local ps_usr="
 %F{$c_usr}${f_lsep}%K{$c_usr}%F{$c_text}${f_icon} %n %k%f"
-  local P_DIR="%F{$c_usr}%K{$c_dir}${f_rsep}%F{$c_text} %3~ %k%f"
-  local P_GIT="%F{$c_dir}%K{$c_vcs}${f_rsep}%F{$c_text}${vcs_info_msg_0_}%k%f"
-  local P_CHAR="%F{$c_vcs}${f_rsep}%k%f
+  local ps_dir="%F{$c_usr}%K{$c_dir}${f_rsep}%F{$c_text} %3~ %k%f"
+  local ps_git="%F{$c_dir}%K{$c_vcs}${f_rsep}%F{$c_text}${vcs_info_msg_0_}%k%f"
+  local ps_char="%F{$c_vcs}${f_rsep}%k%f
 %(?.%F{$c_success}.%F{$c_error})❯%f "
 
-  PROMPT="${P_USR}${P_DIR}${P_GIT}${P_CHAR}"
+  PROMPT="${ps_usr}${ps_dir}${ps_git}${ps_char}"
 }
 
 # autorun
-eval "$(fzf --zsh)"
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+if (( $+commands[fzf] )); then
+  eval "$(fzf --zsh)"
+fi
+zsh_syntax_highlight="/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+if [[ -f /usr/share/zsh/plugins/zsh ]]; then
+  source $zsh_syntax_highlight
+fi
+zsh_suggestions="/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+if [[ -f /usr/share/zsh/plugins/zsh ]]; then
+  source $zsh_suggestions
+fi
+

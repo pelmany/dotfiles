@@ -1,0 +1,16 @@
+# Fontconfig
+font-family = JetBrainsMono Nerd Font
+font-size = 12
+
+# Theming
+theme = dark:Catppuccin Macchiato,light:Everforest Light Soft
+cursor-style = bar
+window-decoration = auto
+window-theme = ghostty
+
+# Notifications
+notify-on-command-finish-action = no-bell,notify
+
+# Binds
+right-click-action = copy-or-paste
+confirm-close-surface = false

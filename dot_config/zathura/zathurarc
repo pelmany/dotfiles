@@ -1,4 +1,4 @@
-include themes/gruvbox-light-soft
+include ./themes/catppuccin-latte
 set font "JetBrains Mono Bold 12"
 set selection-clipboard clipboard
 
